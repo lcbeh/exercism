@@ -1,7 +1,7 @@
 var Bob = function() {};
 
 var silent = function(input) {
-  return input.trim() === "";
+  return input.trim() === ''
 };
 
 var shouted = function(input) {
@@ -9,19 +9,20 @@ var shouted = function(input) {
 };
 
 var question = function(input) {
-  return input[input.length - 1] === "?";
+  return input[input.length - 1] === '?'
 };
 
 Bob.prototype.hey = function(input) {
   if (silent(input)) {
-    return "Fine. Be that way!";
-  } else if (shouted(input)) {
-    return "Whoa, chill out!";
-  } else if (question(input)) {
-    return "Sure.";
-  } else {
-    return 'Whatever.';
+    return 'Fine. Be that way!'
   }
+  if (shouted(input)) {
+    return 'Whoa, chill out!'
+  }
+  if (question(input)) {
+    return 'Sure.'
+  }
+  return 'Whatever.'
 };
 
 module.exports = Bob;
